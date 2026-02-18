@@ -1,0 +1,11 @@
+# Ignore specific project folders
+Assignment_1/
+Exercise_sets/
+
+# Ignore ALL folders by default
+*/
+
+# Allow only lecture python files
+!*.py
+!README.md
+!.gitignore
