@@ -36,27 +36,33 @@ print("Volume of cylinder is : ",c2.volume())
 print("Surface area of cylinder is :",c2.surface_area())
 '''
 class person:
+    
     def __init__(self,name,id,cgpa): # constructor
         self.name = name
         self.id = id
         self.cgpa = cgpa
+        
     def details(self): # method
         return f"Name : {self.name}\nID : {self.id}\nCGPA : {self.cgpa}"
+    
     def cgpa_checker(self):
         if self.cgpa >= 8:
             return "Keep It Up"
         else:
             return "You can do better"
+        
     def update_cgpa(self):
         new_cgpa = float(input("Enter new CGPA : "))
         self.cgpa = new_cgpa
         return self.cgpa
+    
 p1 = person("AUDI",18,9.4)
 print(p1.details())
 print(p1.cgpa_checker())
 print(p1.update_cgpa())
 print(p1.cgpa_checker())
 print()
+
 p2 = person("HARSHA",19,9.5)
 print(p2.details())
 print(p2.cgpa_checker())
