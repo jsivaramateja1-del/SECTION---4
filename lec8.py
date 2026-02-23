@@ -83,6 +83,7 @@ print(s1,"\n")
 s1.update(height = 163)
 s1.update(age = 23)
 print(s1,"\n")
+
 s2 = person("xyz",20,"M",170)
 print(s2,"\n")
 s2.update(height = 180 , age = 25)
