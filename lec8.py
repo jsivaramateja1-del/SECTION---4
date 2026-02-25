@@ -76,7 +76,7 @@ class person:
         if age is not None:
             self.age = age
         if height is not None:
-            self.gender = height
+            self.height = height
     
 s1 = person("abc",19,"M",160)
 print(s1,"\n")
