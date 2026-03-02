@@ -2,11 +2,11 @@
 class person:
     
     def __init__(self,name,age,gender,height):
-        self.__name = name # private attributes
-        self.__age = age # private attributes
-        self.__gender = gender # private attributes
-        self.__height = height # private attributes
-        self.__count = 0 # private attributes
+        self.__name = name # private attributes can only be changed using methods of the class. Main function does'nt have the right to change
+        self.__age = age # private attributes can only be changed using methods of the class. Main function does'nt have the right to change
+        self.__gender = gender # private attributes can only be changed using methods of the class. Main function does'nt have the right to change
+        self.__height = height # private attributes can only be changed using methods of the class. Main function does'nt have the right to change
+        self.__count = 0 # private attributes can only be changed using methods of the class. Main function does'nt have the right to change
         
     def __str__(self):
         return f"Name : {self.__name} \nAge : {self.__age} \nGender : {self.__gender} \nHeight : {self.__height}"
