@@ -77,6 +77,7 @@ for i in d1.keys():
         k = i
 print(f"{k} occurenced  {maximum}")
 '''
+'''
 # highest occurence another way
 d1 = {}
 l = list(map(int,input("Enter the numbers : ").split()))
@@ -94,3 +95,16 @@ for i in d1:
         maximum = d1[i]
         k = i
 print(f"{k} occurred {maximum} times")
+'''
+
+# s = "aabbbcccc"
+# output = abc_abbccc
+s = input("Enter string : ")
+unique = ""
+duplicates = ''
+for ch in s:
+    if ch not in unique:
+        unique += ch
+    else:
+        duplicates += ch
+print(unique+'_'+duplicates)
