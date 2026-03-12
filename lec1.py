@@ -1,97 +1,50 @@
 '''
-#if else
-a = 150
-if a > 100:
-    print("Greater than 100")
-if a > 120:
-    print("Greater than 120")
-if a > 140:
-    print("Greater than 140")
-else:
-    print("nothing")
+print('Hello world!')
+a = 4
+b = 6.6
+c = 'Section 4'
+print(a,b,c)
+print(type(a))
+print(type(b))
+print(type(c))
 '''
 '''
-# example for if else
-user_name = "teja123"
-password = "teja@123"
-print("Enter login credentials :")
-a = input("Enter Username : ")
-b = input("Enter Password : ")
-if a == user_name and b == password:
-    print("Login Successful")
-else:
-    print("Wrong Credentials")
+c = a+b
+print(c)
+print('sum = %d'%(c))
 '''
 '''
-# if elif and else
-a = int(input('Enter a number:'))
-if a%7==0 and a%9==0:
-    print('Number is divisible by 7 and 9')
-elif a%9==0:
-    print('Number is divisible by 9')
-elif a%7==0:
-    print('Number is divisible by 7')
-else:
-    print('Number is not divisible by 7 and 9')
+d = 10
+e = 3
+f = d/e  #float value
+g = d//e #integer value
+print(f)
+print(g)
+print(10%3)
 '''
 '''
-# divisibilty
-num = int(input("Enter a number:"))
-if num%7==0:
-    print("Number is divisible by 7")
-    if num%9==0:
-        print("Number is divisble by 9")
-    else:
-        print("Number is not divisble by 9")
-else:
-    if num%9==0:
-        print("Number is divisible by 9")
-    else:
-        print("Number is not divisible by 7 and 9")
+l=[1,2,3,4,5,6,7,'SOMENAME',[12,4,4,5]]
+for i in range(9):  #0-8 values taken
+    print(l[i])
+for i in range(5,9):
+    print(l[i])
 '''
 '''
-# even and odd
-a = int(input("Enter an number:"))
-if a%2==0:
-    print("Even number")
-else:
-    print("Odd number")
+l1 = []
+l2=[0,0,0,0,0]
+for i in range(20):
+    l1.append(i)
+for i in range(5):
+    l2[i] = i + 1
+print(l1)
+print(l2)
 '''
 '''
-a = int(input("Enter an number:"))
-b = int(input("Enter an number:"))
-op = input("Enter any operator (+,-,*,/,//,%) :")
-if op =='+':
-    print('Sum = %d'%(a+b))
-elif op =='-':
-    print('Difference = %d'%(a-b))
-elif op =='*':
-    print('Product = %d'%(a*b))
-elif op == '/':
-    print('Float division = %d'%(a/b))
-elif op == '//':
-    print('Integer division = %d'%(a//b))
-elif op == '%':
-    print('Remainder = %d'%(a%b))
-else:
-    print("Give correct operator")
+a = int(input())
+b = int(input())
+print('Sum =',a+b)
+print('Difference =',a-b)
+print('Product =',a*b)
+print('Float Division =',a/b)
+print('Integer Division =',a//b)
 '''
-'''
-length = int(input("Enter Length :"))
-breadth = int(input("Enter Breadth :"))
-print(f"Area {length*breadth}")
-print(f"Perimeter {2*(length+breadth)}")
-'''
-'''
-a = -5
-b = 3
-print(a%b)
-'''
-a = int(input("Enter a value :"))
-b = int(input("Enter b value :"))
-c = int(input("Enter c value :"))
-d = b**2-4*a*c
-if d >= 0:
-    print("Roots are real.")
-else :
-    print("Roots are complex.")

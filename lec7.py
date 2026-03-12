@@ -1,77 +1,105 @@
 '''
-print(type(5))
-print(type(5.0))
-print(type('5'))
-print(type(True))
-print(type(2+5j))
+# write a program such ask numbers from user and add them until sum exceeds 100 using while loop.
+sum = 0
+while sum < 100 :
+    if sum >= 100:
+        break
+    else:
+        a = int(input("Enter an number : "))
+        sum += a
+print("Sum = ",sum)
+'''
+
+'''
+# syntax of functions
+def greet():
+    print("Hello from great")
+    return 1
+# By default python function returns None
+# greet()
+print(greet())
 '''
 '''
-S = "Sai"
-S1 = "Uni"
-S2 = S + S1
-#S3 = S - S1 #(Not defined for strings)
-print(S2)
-#print(S3)
-#S4 = S % S1 #(Not defined for strings, but we can use % operator for string formatting)
-#print(S4)
-# S5 = S * S1 #(Not defined for strings, but we can multiply a string with an integer)
-# print(S5)
+def sum2(a,b):
+    return a+b
+x = int(input("Enter an number : "))
+y = int(input("Enter an number : "))
+print("The sum of two numbers are :",sum2(x,y))
 '''
 '''
-# cylinder
-class cylinder:
-    def __init__(self,h,r): # constructor #initilize the object
-        self.h = h # attributes or data members
-        self.r = r 
-    def volume(self): # member function or methods
-        return 3.14*self.r*self.r*self.h
-    def surface_area(self):
-        return 2*3.14*self.r*self.h
+def factorial_1(n):
+    if n == 0 or n == 1:
+        return 1
+    #else:
+    #    return n * factorial_1(n-1)
+    # pass #placeholder
+    fact = 1
+    for i in range(1,n+1):
+        fact *= i
+    return fact
     
-c1 = cylinder(1,1)
-c2 = cylinder(2,3)
-print("Volume of cylinder is : ",c1.volume())
-print("Surface area of cylinder is :",c1.surface_area())
-print("Volume of cylinder is : ",c2.volume())
-print("Surface area of cylinder is :",c2.surface_area())
+
+a = int(input("Enter an integer to find factorial : "))
+
+b = factorial_1(a)
+
+print(f"the factorial of a number {a} is {b}")
 '''
-class person:
-    
-    def __init__(self,name,id,cgpa): # constructor
-        self.name = name
-        self.id = id
-        self.cgpa = cgpa
-        
-    def details(self): # method
-        return f"Name : {self.name}\nID : {self.id}\nCGPA : {self.cgpa}"
-    
-    def cgpa_checker(self):
-        if self.cgpa >= 8:
-            return "Keep It Up"
+'''
+# convert uppercase letters in a word into lowercase letters with return
+def to_lower(n):
+    ch = ''
+    for i in range(len(n)):
+        if 65 <= ord(n[i]) <= 90:
+            ch += chr(ord(n[i]) + 32)
         else:
-            return "You can do better"
-        
-    def update_cgpa(self):
-        new_cgpa = float(input("Enter new CGPA : "))
-        self.cgpa = new_cgpa
-        return self.cgpa
-    
-p1 = person("AUDI",18,9.4)
-print(p1.details())
-print(p1.cgpa_checker())
-print(p1.update_cgpa())
-print(p1.cgpa_checker())
-print()
+            ch += n[i]
+    return ch
+a = input("Enter a string : ")
+print("String in lower case :",to_lower(a))
+'''
+'''
+# convert uppercase letters in a word into lowercase letters without return
+def to_lower(n):
+    ch = ''
+    for i in n:
+        if 65 <= ord(i) <= 90:
+            ch += chr(ord(i) + 32)
+        else:
+            ch += i
+    print("String in lower case :",ch)
+a = input("Enter a string : ")
+to_lower(a)
+'''
+'''
+# count the number of digits using functions
+def ncount(n):
+    i = 0
+    count = 0
+    if n == 0:
+        return 1
+    while n != 0:
+        a = n%10
+        count += 1
+        n = n // 10
+        i += 1
+    return count
+a = int(input("Enter a number : "))
+print("Count of Digits =",ncount(a))
+'''
+'''
+# convert uppercase letters in a word into lowercase letters with return
+def to_lower(n):
+    ch = ''
+    for i in range(len(n)):
+        if (65 <= ord(n[i]) <= 90) or (97 <= ord(n[i]) <= 122):
+            ch += chr(ord(n[i]) ^ 32) # With Bitwise operator
+        # elif 97 <= ord(n[i]) <= 122:
+        #    ch += chr(ord(n[i]) - 32) # Without Bitwise operator
+        else:
+            ch += n[i]
+    return ch
+a = input("Enter a string : ")
+print("New String :",to_lower(a))
+'''
 
-p2 = person("HARSHA",19,9.5)
-print(p2.details())
-print(p2.cgpa_checker())
-print(p2.update_cgpa())
-print(p2.cgpa_checker())
-print()
-
-p3 = person("Teja",15,7.6)
-print(p3.details())
-print(p3.cgpa_checker())
-print(p3.update_cgpa())
-print(p3.cgpa_checker())

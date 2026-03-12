@@ -1,105 +1,122 @@
 '''
-# write a program such ask numbers from user and add them until sum exceeds 100 using while loop.
+s = "sai university "
+v_count = 0
+sp_count = 0
+c_count = 0
+for i in s:
+        if i == 'a' or i == 'e' or i == 'i' or i == 'o' or i == 'u':
+            v_count += 1
+        elif i == " ":
+            sp_count += 1
+        else:
+            c_count += 1
+print("Vowels count = %d"%(v_count))
+print("Consonants count = %d"%(c_count))
+print("Space count = %d"%(sp_count))
+'''
+'''
+s = "programmingINPYTHON"
+s1 =''
+for i in s:
+    x = ord(i)
+    if (x >= 97 and x <= 122):
+        s1 += chr(ord(i) - 32)
+    else:
+        s1 += i
+print("String in upper case = %s"%(s1))
+'''
+'''
+s = 'programming'
+s[0] = "P" # TypeError : 'str' object does not support item assignment 
+print(s[0])
+s1 = ''
+'''
+'''
+s1 = input("Enter a string : ")
+ch = input("Enter a character :")
+found = 0 #flag variable
+for i in s1:
+    if i == ch:
+        found = 1
+        print("Yes")
+        break
+if found == 0:
+    print("No")
+'''
+'''
+s = "sai university"
+sub_string = input("Enter a sub-string : ")
+if sub_string in s:
+    print("Present")
+else:
+    print("Absent")
+'''
+'''
+s = "sai university"
+c = input("Enter character : ")
+if c in s:
+    print("Present")
+else:
+    print("Absent")
+'''
+'''
+s = "sai university"
+c = input("Enter character : ")
+if c not in s:
+    print("Absent")
+else:
+    print("Present")
+'''
+'''
+# a = 2356
+#sum of square of digits
+# while loop
+num = int(input("Enter an integer : "))
+rem = 0
 sum = 0
-while sum < 100 :
-    if sum >= 100:
+while num != 0:
+    rem = num%10
+    sum = sum + rem * rem
+    num = num//10
+print("Sum of square of digits = %d"%(sum))
+'''
+'''
+# a = 2356
+#sum of cubes of digits
+# while loop
+num = int(input("Enter an integer : "))
+rem = 0
+sum = 0
+while num != 0:
+    rem = num%10
+    sum = sum + rem ** 3
+    num = num//10
+print("Sum of cubes of digits = %d"%(sum))
+'''
+'''
+num = 0
+while True:
+    num = int(input("Enter an number (1 to stop): "))
+    if num == 1:
         break
     else:
-        a = int(input("Enter an number : "))
-        sum += a
-print("Sum = ",sum)
+        continue
 '''
+'''
+a = int(input("Enter an integer 1 : "))
+b = int(input("Enter an integer 2 : "))
+try:
+    print(a/b)
+except ZeroDivisionError:
+    print("Ok But We Can Continue")
+print("Program ends")
+'''
+'''
+s = "sai"
 
+for i in range(0,9):
+    try:
+        print(s[i],end="")
+    except IndexError:
+        continue
 '''
-# syntax of functions
-def greet():
-    print("Hello from great")
-    return 1
-# By default python function returns None
-# greet()
-print(greet())
-'''
-'''
-def sum2(a,b):
-    return a+b
-x = int(input("Enter an number : "))
-y = int(input("Enter an number : "))
-print("The sum of two numbers are :",sum2(x,y))
-'''
-'''
-def factorial_1(n):
-    if n == 0 or n == 1:
-        return 1
-    #else:
-    #    return n * factorial_1(n-1)
-    # pass #placeholder
-    fact = 1
-    for i in range(1,n+1):
-        fact *= i
-    return fact
-    
-
-a = int(input("Enter an integer to find factorial : "))
-
-b = factorial_1(a)
-
-print(f"the factorial of a number {a} is {b}")
-'''
-'''
-# convert uppercase letters in a word into lowercase letters with return
-def to_lower(n):
-    ch = ''
-    for i in range(len(n)):
-        if 65 <= ord(n[i]) <= 90:
-            ch += chr(ord(n[i]) + 32)
-        else:
-            ch += n[i]
-    return ch
-a = input("Enter a string : ")
-print("String in lower case :",to_lower(a))
-'''
-'''
-# convert uppercase letters in a word into lowercase letters without return
-def to_lower(n):
-    ch = ''
-    for i in n:
-        if 65 <= ord(i) <= 90:
-            ch += chr(ord(i) + 32)
-        else:
-            ch += i
-    print("String in lower case :",ch)
-a = input("Enter a string : ")
-to_lower(a)
-'''
-'''
-# count the number of digits using functions
-def ncount(n):
-    i = 0
-    count = 0
-    if n == 0:
-        return 1
-    while n != 0:
-        a = n%10
-        count += 1
-        n = n // 10
-        i += 1
-    return count
-a = int(input("Enter a number : "))
-print("Count of Digits =",ncount(a))
-'''
-'''
-# convert uppercase letters in a word into lowercase letters with return
-def to_lower(n):
-    ch = ''
-    for i in range(len(n)):
-        if (65 <= ord(n[i]) <= 90) or (97 <= ord(n[i]) <= 122):
-            ch += chr(ord(n[i]) ^ 32) # With Bitwise operator
-        # elif 97 <= ord(n[i]) <= 122:
-        #    ch += chr(ord(n[i]) - 32) # Without Bitwise operator
-        else:
-            ch += n[i]
-    return ch
-a = input("Enter a string : ")
-print("New String :",to_lower(a))
-'''
-

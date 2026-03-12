@@ -1,99 +1,104 @@
 '''
+class TermMarks:
+    def __init__(self,Term1 = 0,Term2 = 0,Term3 = 0):
+        self.__Term1 = Term1 
+        self.__Term2 = Term2
+        self.__Term3 = Term3
+        if self.__Term1 < 0:
+            self.__Term1 = 0
+        if self.__Term2 < 0:
+            self.__Term2 = 0
+        if self.__Term3 < 0:
+            self.__Term3 = 0
+    def average(self): # average of term marks
+        return f"The average of the given marks = {(self.__Term1 + self.__Term2 + self.__Term3)/3}"
+    def maximum(self): # maximum of term marks
+        if self.__Term1 >= self.__Term2 and self.__Term1 >= self.__Term3:
+            Max = self.__Term1
+        elif self.__Term2 >= self.__Term1 and self.__Term2 >= self.__Term3:
+            Max = self.__Term2
+        else:
+            Max = self.__Term3
+        return f"The maximum of the given marks = {Max}"
+    def __str__(self):
+        return f"Marks are\nTest 1 : {self.__Term1}\nTest 2 : {self.__Term2}\nTest 3 : {self.__Term3}"
+    
+t = TermMarks()
+print(t)
+print(t.average())
+print(t.maximum())
+print()
+
+t1 = TermMarks(12,45,90)
+print(t1)
+print(t1.average())
+print(t1.maximum())
+print()
+
+t2 = TermMarks(-1,34,35)
+print(t2)
+print(t2.average())
+print(t2.maximum())
+print()
+'''
+
+# My own list
+
 class my_list:
     def __init__(self):
         self.l = [0,0,0,0,0,0,0,0,0,0,0]
-l = my_list()
-print(type(l))
-'''
-'''
-l = []
-print(type(l))
-l.append(1.2)
-l.append(6)
-l.append(56)
-l.append(100)
-l.append("university")
-l.insert(2,2026)
-print(l)
-l.insert(5,69)
-print(l)
-l.pop(3) # specific index
-print(l)
-print(l[-1]) # negative indexing
-print(l[-2])
-l.pop()  # default last index
-print(l) 
-l.append(6)
-print(l)
-l.remove(6) # removes first occurence
-print(l)
-'''
-
-'''
-l = [2,3,5,"teja",2.4,[1,2,3]]
-# one of the way to print list (prefered when the length is known)
-for i in range(6):
-    print(l[i],end = " ")
-print()
-
-# reverse order
-for i in range(5,-1,-1):
-    print(l[i],end = " ")
-
-# another way (length is unknown)
-for i in l:
-    print(i)
-    
-print(l[3][3])
-print(l[5][0])
-print(l[5][1])
-print(l[5][2])
-
-for i in range(4): # teja = 4 letters
-    if i < 3:
-        print(l[3][i],end=",")
-    else:
-        print(l[3][i],end="")
-'''
-
-'''
-l = list(map(int,input("Enter numbers: ").split(" ")))
-maximum = l[0]
-minimum = l[0]
-sum = 0
-count = 0
-for i in l:
-    if i > maximum:
-        maximum = i
-    if i < minimum:
-        minimum = i
-    sum = sum + i
-    count += 1
-average = sum / count
-print("Average = ",average)
-print(l)
-print("Maximum = ",maximum)
-print("Minimum = ",minimum)
-'''
-
-
-# second largest and second smallest
-l = list(map(int,input("Enter numbers : ").split()))
-f_maximum = l[0]
-s_maximum = l[1]
-f_minimum = l[0]
-s_minimum = l[1]
-for i in l:
-    if i > f_maximum:
-        f_maximum = i
-    if i < f_minimum:
-        f_minimum = i
-for i in l:
-    if i > s_maximum and i < f_maximum:
-        s_maximum = i
-    if i < s_minimum and i > f_minimum:
-        s_minimum = i
-print("First Smallest = ",f_minimum)
-print("Second Smallest = ",s_minimum)
-print("First Largest = ",f_maximum)
-print("Second Largest = ",s_maximum)
+        self.count = 0
+    def my_append(self,value):
+        self.l[self.count] = value
+        self.count = self.count + 1
+    def print_list(self):
+        print("[",end="")
+        for i in range(self.count):
+            print(self.l[i],end = ",")
+        print("]")
+    def update(self,index,value):
+        if index < self.count:
+            self.l[index] = value
+        else:
+            print("Index out of range.")
+    def insert(self,index,value):
+        if self.count < len(self.l) and index < self.count:
+            for i in range(self.count-1,index-1,-1):
+                self.l[i+1] = self.l[i]
+            self.l[index] = value
+            self.count = self.count + 1
+        else:
+            print("Index out of range.")
+    def delete_index(self,index):
+        if index < self.count:
+            for i in range(index,self.count-1):
+                self.l[i] = self.l[i+1]
+            self.l[self.count-1] = 0
+            self.count = self.count - 1
+        else:
+            print("Index out of range.")
+    def delete_value(self,value):
+        for i in range(self.count):
+            if self.l[i] == value:
+                for j in range(i,self.count-1):
+                    self.l[j] = self.l[j+1]
+                self.l[self.count-1] = 0
+                self.count = self.count - 1
+                return
+        print("Value not found.")
+l1 = my_list()
+l1.my_append(4)
+l1.my_append(56)
+l1.my_append(99)
+l1.my_append(100)
+l1.print_list()
+l1.update(0,5)
+l1.print_list()
+l1.insert(2,900)
+l1.print_list()
+l1.insert(4,56)
+l1.print_list()
+l1.delete_index(4)
+l1.print_list()
+l1.delete_value(900)
+l1.print_list()

@@ -1,122 +1,97 @@
 '''
-s = "sai university "
-v_count = 0
-sp_count = 0
-c_count = 0
-for i in s:
-        if i == 'a' or i == 'e' or i == 'i' or i == 'o' or i == 'u':
-            v_count += 1
-        elif i == " ":
-            sp_count += 1
-        else:
-            c_count += 1
-print("Vowels count = %d"%(v_count))
-print("Consonants count = %d"%(c_count))
-print("Space count = %d"%(sp_count))
+# string
+s = "Teja"
+s1 = "Rama "
+s2 = "Siva"
+s3 = s2 + " " +s1 + s
+print(s3)
+print("Name : %s "%(s2 + " " + s1 +s))
+'''
+'''s = input("Enter a string : ") # input = something
+#syntax of for loop
+for i in range(0,9): #(start,ending)
+    print(s[i])
 '''
 '''
-s = "programmingINPYTHON"
-s1 =''
-for i in s:
-    x = ord(i)
-    if (x >= 97 and x <= 122):
-        s1 += chr(ord(i) - 32)
-    else:
-        s1 += i
-print("String in upper case = %s"%(s1))
-'''
-'''
-s = 'programming'
-s[0] = "P" # TypeError : 'str' object does not support item assignment 
-print(s[0])
-s1 = ''
-'''
-'''
-s1 = input("Enter a string : ")
-ch = input("Enter a character :")
-found = 0 #flag variable
-for i in s1:
-    if i == ch:
-        found = 1
-        print("Yes")
-        break
-if found == 0:
-    print("No")
-'''
-'''
-s = "sai university"
-sub_string = input("Enter a sub-string : ")
-if sub_string in s:
-    print("Present")
-else:
-    print("Absent")
-'''
-'''
-s = "sai university"
-c = input("Enter character : ")
-if c in s:
-    print("Present")
-else:
-    print("Absent")
-'''
-'''
-s = "sai university"
-c = input("Enter character : ")
-if c not in s:
-    print("Absent")
-else:
-    print("Present")
-'''
-'''
-# a = 2356
-#sum of square of digits
-# while loop
-num = int(input("Enter an integer : "))
-rem = 0
-sum = 0
-while num != 0:
-    rem = num%10
-    sum = sum + rem * rem
-    num = num//10
-print("Sum of square of digits = %d"%(sum))
-'''
-'''
-# a = 2356
-#sum of cubes of digits
-# while loop
-num = int(input("Enter an integer : "))
-rem = 0
-sum = 0
-while num != 0:
-    rem = num%10
-    sum = sum + rem ** 3
-    num = num//10
-print("Sum of cubes of digits = %d"%(sum))
-'''
-'''
-num = 0
-while True:
-    num = int(input("Enter an number (1 to stop): "))
-    if num == 1:
-        break
-    else:
-        continue
-'''
-'''
-a = int(input("Enter an integer 1 : "))
-b = int(input("Enter an integer 2 : "))
-try:
-    print(a/b)
-except ZeroDivisionError:
-    print("Ok But We Can Continue")
-print("Program ends")
-'''
-'''
-s = "sai"
-
+s = input("Enter a string : ")
 for i in range(0,9):
-    try:
-        print(s[i],end="")
-    except IndexError:
-        continue
+    print(s[i])
+'''
+'''
+#method
+s = input("Enter an string : ")
+for i in s:
+    print(i,end='')
+'''
+'''
+s = input("Enter an string : ")
+for i in s:
+    print(i,end=',')
+'''
+'''
+s = "SaiUniversity"
+for i in range(0,13,):
+    print(s[i],end="")
+'''
+'''
+s = "SaiUniversity"
+for i in range(0,13,3): #(starting , ending , number of steps)
+    print(s[i],end="")
+'''
+'''
+# Reversing a string
+s = "SaiUniversity"
+for i in range(12,-1,-1): #(starting , ending , number of steps)
+    print(s[i],end="")
+'''
+'''
+# Odd numbers upto 20
+for i in range(1,20,2):
+    print(i,end=" ")
+'''
+'''
+# numbers divisible by 4 upto 14
+for i in range(1,15):
+    if i%4==0:
+        print(i)
+'''
+'''
+# numbers divisible by either 2 or 3 upto 50
+for i in range(1,51):
+    if i%2==0 or i%3==0:
+        print(i,end=" ")
+'''
+'''
+# numbers divisible by both 2 or 3 upto 50
+for i in range(1,51):
+    if i%2==0 and i%3==0:
+        print(i,end=" ")
+'''
+'''
+# while loop example : 
+p = 12345
+i = 0
+#syntax of while loop
+while i<8:
+    print(i,end = " ")
+    i+=1
+'''
+'''
+# counting number of digits and sum of digits
+a = int(input("Enter an integer : "))
+count = 0
+rem = 0
+while a!=0:
+    rem += a%10
+    a = a//10
+    count += 1
+print("Number of digits = %d."%(count))
+print("Sum of digits = %d"%(rem))
+'''
+'''
+# Print all odd indexes of number
+n = input("Enter an integer : ")
+for i in range(len(n)):
+    if i%2!=0:
+        print(i,end=" ")
 '''
