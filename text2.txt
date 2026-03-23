@@ -1,0 +1,5 @@
+Hello from Lec16.py 
+ you can write something 
+ then again write something
+ my mind doesn't know something
+ something that works for other not works for me
