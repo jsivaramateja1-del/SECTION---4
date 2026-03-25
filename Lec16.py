@@ -36,10 +36,26 @@ print(words)
 print(word_list)
 '''
 # replace word anything into something in the file text2.txt
+'''
 text_file = "text2.txt"
 with open(text_file, "r") as f:
     data = f.read()
 data = data.replace("anything", "something")
 with open(text_file, "w") as f:
     f.write(data)
+'''
     
+text_file = "text2.txt"
+with open(text_file, "r") as f:
+    data = f.read()
+new_data = ""
+i = 0
+while i < len(data):
+    if data[i:i+8] == "anything":
+        new_data += "something"
+        i += 8
+    else:
+        new_data += data[i]
+        i += 1
+with open(text_file, "w") as f:
+    f.write(new_data)
